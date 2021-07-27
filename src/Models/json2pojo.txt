@@ -1,0 +1,23 @@
+
+{"foods":[{"fdcId":1660793,
+           "description":"CHEESE",
+
+           "foodNutrients":[{"nutrientId":1003,
+                             "nutrientName":"Protein",
+                        	"value":21.4},
+                            {"nutrientId":1004,
+                             "nutrientName":"Total lipid (fat)",
+                           "value":32.1},
+                            {"nutrientId":1005,
+                             "nutrientName":"Carbohydrate",
+                           "value":3.57},
+                            {"nutrientId":1008,
+                             "nutrientName":"Energy",
+                           "value":393},{"nutrientId":2000,
+                                         "nutrientName":"Sugars"}
+
+                           ]
+          }
+
+          ]
+}
