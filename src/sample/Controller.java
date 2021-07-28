@@ -1,5 +1,8 @@
 package sample;
 
+import Models.SearchResultDTO;
+import Services.FDCService;
+import Services.Repository;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -27,8 +30,15 @@ public class Controller implements Initializable {
 
     @FXML
     void search(ActionEvent event) {
-        listView.getItems().clear();
-        listView.getItems().addAll(searchList(searchBar.getText(),words));
+        List<SearchResultDTO> result;
+        result = Repository.searchFood(searchBar.getText());
+        System.out.println(searchBar.getText());
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        result.forEach(System.out::println);
     }
 
     @Override
