@@ -18,15 +18,13 @@ import java.util.stream.Collectors;
 
 public class Controller implements Initializable {
 
-    ArrayList<String> words = new ArrayList<>(
-            Arrays.asList()
-    );
 
     @FXML
     private TextField searchBar;
 
     @FXML
     private ListView<String> listView;
+
 
     @FXML
     void search(ActionEvent event) {
@@ -39,11 +37,19 @@ public class Controller implements Initializable {
             e.printStackTrace();
         }
         result.forEach(System.out::println);
+
+        listView.getItems().addAll(
+                result.stream()
+                        .map(SearchResultDTO::toString)
+                        .collect(Collectors.toList())
+        );
+
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        listView.getItems().addAll(words);
+
+//        listView.getItems().addAll();
     }
 
     private List<String> searchList(String searchWords, List<String> listOfStrings) {

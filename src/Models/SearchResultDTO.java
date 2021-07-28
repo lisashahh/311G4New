@@ -104,5 +104,14 @@ public class SearchResultDTO {
     }
 
 
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append(this.foodName)
+                .append('\t')
+                .append(this.kcal);
+
+        return builder.toString();
+    }
 }
 
